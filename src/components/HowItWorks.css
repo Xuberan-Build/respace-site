@@ -1,0 +1,63 @@
+.how { background: var(--cream); }
+
+.how-header h2 { color: var(--sage-dark); margin-top: 1rem; }
+.how-header h2 em { font-style: italic; color: var(--sage); }
+
+.how-steps {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0;
+  border-top: 1px solid var(--cream-dark);
+}
+
+.how-step {
+  padding: 3.5rem 3rem 3.5rem 0;
+  border-right: 1px solid var(--cream-dark);
+}
+
+.how-step:last-child { border-right: none; padding-right: 0; }
+.how-step:not(:first-child) { padding-left: 3rem; }
+
+.how-step-num {
+  font-family: var(--font-display);
+  font-weight: 300;
+  font-size: 3.5rem;
+  color: var(--cream-dark);
+  line-height: 1;
+  display: block;
+  margin-bottom: 1.5rem;
+}
+
+.how-step-line {
+  width: 1.8rem;
+  height: 1px;
+  background: var(--gold);
+  margin-bottom: 1.5rem;
+}
+
+.how-step-title {
+  color: var(--charcoal);
+  margin-bottom: 1rem;
+}
+
+.how-step-body {
+  font-size: 0.95rem;
+  color: var(--warm-gray);
+  line-height: 1.85;
+  font-weight: 300;
+}
+
+@media (max-width: 900px) {
+  .how-steps {
+    grid-template-columns: 1fr;
+    border-top: none;
+  }
+
+  .how-step {
+    padding: 2.5rem 0;
+    border-right: none;
+    border-top: 1px solid var(--cream-dark);
+  }
+
+  .how-step:not(:first-child) { padding-left: 0; }
+}

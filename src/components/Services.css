@@ -1,0 +1,87 @@
+.services { background: var(--ivory); }
+
+.services-header h2 { color: var(--sage-dark); margin-top: 1rem; }
+.services-header h2 em { font-style: italic; color: var(--sage); }
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0;
+  border: 1px solid var(--cream-dark);
+  margin-bottom: 4rem;
+}
+
+.service-card {
+  padding: 3rem 2.5rem;
+  border-right: 1px solid var(--cream-dark);
+  border-bottom: 1px solid var(--cream-dark);
+  transition: background var(--transition);
+  position: relative;
+  overflow: hidden;
+}
+
+.service-card::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: var(--sage);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.4s ease;
+}
+
+.service-card:hover { background: var(--cream); }
+.service-card:hover::after { transform: scaleX(1); }
+
+.service-card:nth-child(3n) { border-right: none; }
+.service-card:nth-last-child(-n+3) { border-bottom: none; }
+
+.service-card-index {
+  font-family: var(--font-display);
+  font-size: 0.9rem;
+  font-weight: 300;
+  color: var(--gold);
+  letter-spacing: 0.05em;
+  display: block;
+  margin-bottom: 1.2rem;
+}
+
+.service-card-title {
+  color: var(--sage-dark);
+  margin-bottom: 1.2rem;
+  font-size: clamp(1.2rem, 2vw, 1.6rem);
+}
+
+.service-card-line {
+  width: 1.5rem;
+  height: 1px;
+  background: var(--gold);
+  margin-bottom: 1rem;
+}
+
+.service-card-body {
+  font-size: 0.9rem;
+  color: var(--warm-gray);
+  line-height: 1.8;
+  font-weight: 300;
+}
+
+.services-cta { text-align: center; }
+
+@media (max-width: 900px) {
+  .services-grid { grid-template-columns: repeat(2, 1fr); }
+  .service-card:nth-child(3n) { border-right: 1px solid var(--cream-dark); }
+  .service-card:nth-child(2n) { border-right: none; }
+  .service-card:nth-last-child(-n+3) { border-bottom: 1px solid var(--cream-dark); }
+  .service-card:nth-last-child(-n+2) { border-bottom: none; }
+}
+
+@media (max-width: 580px) {
+  .services-grid { grid-template-columns: 1fr; }
+  .service-card { border-right: none !important; }
+  .service-card:last-child { border-bottom: none; }
+  .service-card:nth-last-child(-n+2) { border-bottom: 1px solid var(--cream-dark); }
+}
