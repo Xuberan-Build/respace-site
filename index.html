@@ -10,5 +10,24 @@
   <body>
     <div id="root"></div>
     <script type="module" src="/src/main.jsx"></script>
+
+    <!-- Netlify Forms detection — must be static HTML, never rendered -->
+    <form name="respace-contact" data-netlify="true" data-netlify-honeypot="bot-field" hidden>
+      <input type="hidden" name="form-name" value="respace-contact" />
+      <input type="hidden" name="bot-field" />
+      <input type="text" name="name" />
+      <input type="email" name="email" />
+      <input type="tel" name="phone" />
+      <select name="service">
+        <option>Home Reset</option>
+        <option>Closet Curation</option>
+        <option>Move &amp; Transition</option>
+        <option>Office &amp; Workspace</option>
+        <option>Lifestyle Reset</option>
+        <option>Maintenance Plan</option>
+        <option>Not Sure Yet</option>
+      </select>
+      <textarea name="message"></textarea>
+    </form>
   </body>
 </html>
