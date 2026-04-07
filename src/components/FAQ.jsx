@@ -3,24 +3,36 @@ import './FAQ.css'
 
 const faqs = [
   {
-    q: 'How long does a session take?',
-    a: 'Sessions start at 3 hours and vary depending on the space and scope. We\'ll give you a time estimate during your consultation.',
+    q: 'What are your rates?',
+    a: 'Our services range from $30 to $60 per hour, depending on the size, complexity, and scope of the project.',
   },
   {
-    q: 'Do I need to clean before you arrive?',
-    a: 'Not at all. Come as you are — we handle everything judgment-free and meet your space exactly where it is.',
+    q: 'Is there a minimum booking time?',
+    a: 'Yes. We require a minimum of 5 hours per session to ensure meaningful progress and results.',
+  },
+  {
+    q: 'Is a consultation required?',
+    a: 'Yes. A consultation is required to provide an accurate estimate. Consultations can be in-person or virtual. For virtual consultations, clients must provide clear images of all areas needing organization, photos of walls, closets, cabinets, and storage areas, and measurements or dimensions where applicable.',
+  },
+  {
+    q: 'What happens during a consultation?',
+    a: 'During your consultation, we will assess your space and needs, discuss your goals, lifestyle, or business operations, identify problem areas and opportunities, provide a recommended plan and estimated timeline, and discuss budget and any materials needed.',
+  },
+  {
+    q: 'Is there a minimum number of spaces required?',
+    a: 'No. We can organize one area or multiple spaces depending on your needs.',
+  },
+  {
+    q: 'Should I be present during the organizing process?',
+    a: 'That depends on your preference and the scope of the project. Some clients prefer to be involved in the decision-making process, while others prefer a hands-off, full-service experience. We will determine what works best during your consultation.',
   },
   {
     q: 'Do you provide organizing products?',
-    a: 'Yes. We can recommend and source products tailored to your space, style, and budget.',
+    a: 'Yes. We can recommend and source organizing products tailored to your space, style, and budget. All purchases will be discussed and approved prior to buying.',
   },
   {
-    q: 'Will I have to throw everything away?',
-    a: 'Never. We help you make intentional, empowered decisions. Nothing is forced, nothing is rushed.',
-  },
-  {
-    q: 'Do you offer maintenance services?',
-    a: 'Yes. We offer ongoing monthly and quarterly support to keep your space aligned long after your initial session.',
+    q: 'How do I book?',
+    a: 'Getting started is simple. Request a consultation, receive your customized plan, and schedule your service. Use the contact form below or reach out directly — we will take it from there.',
   },
 ]
 
