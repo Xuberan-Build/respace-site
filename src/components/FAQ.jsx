@@ -31,6 +31,10 @@ const faqs = [
     a: 'Yes. We can recommend and source organizing products tailored to your space, style, and budget. All purchases will be discussed and approved prior to buying.',
   },
   {
+    q: 'Do you charge for consultations?',
+    a: 'Consultations are complimentary for local clients.',
+  },
+  {
     q: 'How do I book?',
     a: 'Getting started is simple. Request a consultation, receive your customized plan, and schedule your service. Use the contact form below or reach out directly — we will take it from there.',
   },
