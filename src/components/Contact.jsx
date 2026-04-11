@@ -1,28 +1,37 @@
 import { useState } from 'react'
 import './Contact.css'
+import { sendContactNotification } from '../services/email'
 
 export default function Contact() {
-  const [submitted, setSubmitted] = useState(false)
+  const [status, setStatus] = useState('idle') // 'idle' | 'loading' | 'success' | 'error'
 
   const handleSubmit = async (e) => {
     e.preventDefault()
+    setStatus('loading')
+
     const form = e.target
     const data = new FormData(form)
 
-    try {
-      await fetch('/', {
+    // Netlify form capture and EmailJS notification run in parallel.
+    // EmailJS is non-blocking — a failure there does not prevent the lead from being recorded.
+    const [netlifyResult] = await Promise.allSettled([
+      fetch('/', {
         method: 'POST',
         headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
         body: new URLSearchParams(data).toString(),
-      })
-      setSubmitted(true)
-    } catch {
-      // Fallback: let native form action handle it
-      form.submit()
+      }),
+      sendContactNotification(data),
+    ])
+
+    if (netlifyResult.status === 'rejected') {
+      setStatus('error')
+      return
     }
+
+    setStatus('success')
   }
 
-  if (submitted) {
+  if (status === 'success') {
     return (
       <section className="section contact bg-sage" id="contact">
         <div className="section-inner contact-success">
@@ -101,7 +110,20 @@ export default function Contact() {
             />
           </div>
 
-          <button type="submit" className="btn btn-gold contact-submit">Send My Request</button>
+          {status === 'error' && (
+            <p className="contact-error">
+              Something went wrong — please try again or email us directly at{' '}
+              <a href="mailto:info@respace-usa.com">info@respace-usa.com</a>
+            </p>
+          )}
+
+          <button
+            type="submit"
+            className="btn btn-gold contact-submit"
+            disabled={status === 'loading'}
+          >
+            {status === 'loading' ? 'Sending…' : 'Send My Request'}
+          </button>
         </form>
       </div>
     </section>

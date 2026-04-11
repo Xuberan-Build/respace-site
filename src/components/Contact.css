@@ -123,6 +123,23 @@
   .contact-sub { max-width: none; }
 }
 
+.contact-error {
+  font-family: var(--font-body);
+  font-size: 0.9rem;
+  color: #f5c5c5;
+  margin-bottom: 1rem;
+}
+
+.contact-error a {
+  color: var(--gold-light);
+  text-underline-offset: 3px;
+}
+
+.btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
 @media (max-width: 580px) {
   .form-row { grid-template-columns: 1fr; }
 }
